@@ -1,0 +1,54 @@
+:root {
+    --purple-Lt: hsl(254, 88%, 90%);
+    --purple: hsl(256, 67%, 59%);
+    --yellow-Lt: hsl(31, 66%, 93%);
+    --yellow: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+
+    --18px: 1.125rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* ## Colors
+
+- Purple 100: hsl(254, 88%, 90%)
+- Purple 500: Purple 500: hsl(256, 67%, 59%)
+
+- Yellow 100: hsl(31, 66%, 93%)
+- Yellow 500: hsl(39, 100%, 71%)
+
+- White: hsl(0, 0%, 100%)
+- Black: hsl(0, 0%, 7%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 18px
+
+### Font
+
+- Family: [DM Sans](https://fonts.google.com/specimen/DM+Sans)
+- Weights: 400, 500 */
