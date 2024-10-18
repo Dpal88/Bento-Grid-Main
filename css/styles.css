@@ -17,7 +17,7 @@
     padding: 0;
 }
 body {
-    font-family: sans-serif;
+    font-family: "DM Sans", sans-serif;
 }
 
 img {
@@ -31,24 +31,88 @@ img {
     color: hsl(228, 45%, 44%); 
 }
 
-/* ## Colors
+.container {
+    background: #F6F5F6;
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 1rem 2.5rem;
 
-- Purple 100: hsl(254, 88%, 90%)
-- Purple 500: Purple 500: hsl(256, 67%, 59%)
+    .card {
+        border-radius: 0.625rem;
+    }
+    h2 {
+        font-size: 1.625rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+        letter-spacing: -0.098rem;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.75rem;
+        letter-spacing: -0.12rem;
+    }
+    h4 {
+        font-size: 2.875rem;
+        font-weight: 500;
+        line-height: 2.625rem;
+        letter-spacing: -0.115rem;
+    }
+    p {
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+}
 
-- Yellow 100: hsl(31, 66%, 93%)
-- Yellow 500: hsl(39, 100%, 71%)
 
-- White: hsl(0, 0%, 100%)
-- Black: hsl(0, 0%, 7%)
+.container .card:first-child {
+    background: var(--purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 2rem;
 
-## Typography
+    h1, p {
+        color: var(--white);
+    }
 
-### Body Copy
+    h1 {
+        font-size: 2.875rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 2.625rem;
+        /* letter-spacing: -0.115rem; */
 
-- Font size (paragraph): 18px
+        span {
+            color: var(--yellow);
+        }
+    }
+    .img-wrapper {
+        max-width: 12rem;
+        margin-top: 1.5rem;
+    }
+    p {
+        margin-top: 0.5rem;
+    }
+}
 
-### Font
+.container .card:nth-child(2) {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
 
-- Family: [DM Sans](https://fonts.google.com/specimen/DM+Sans)
-- Weights: 400, 500 */
+    .img-wrapper {
+        max-width: 19.75rem;
+    }
+    h2 {
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+}
+
+.container .card:nth-child(3) {
+    background: var(--yellow);
+}
