@@ -7,6 +7,12 @@
     --black: hsl(0, 0%, 7%);
 
     --18px: 1.125rem;
+
+    --spacing-100: .5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
 }
 
 *, *::before, *::after {
@@ -34,11 +40,56 @@ img {
 .container {
     background: #F6F5F6;
     display: grid;
-    gap: 2rem;
-    padding: 2rem 1rem 2.5rem;
+    gap: var(--spacing-400);
+    padding: var(--spacing-400) var(--spacing-200) var(--spacing-500);
 
     .card {
+        display: flex;
+        flex-direction: column;
         border-radius: 0.625rem;
+    }
+
+    /* --------- Sets a gap for all card elements --------- */
+    .card:nth-child(1), /* selects 1st, 4th, 6th, 7th, & 8th child elements */
+    .card:nth-child(4),
+    .card:nth-child(n + 6) {
+        gap: var(--spacing-300);
+    }
+    .card:nth-child(2),
+    .card:nth-child(3) {
+        gap: var(--spacing-200);
+    }
+    .card:nth-child(5) {
+        gap: var(--spacing-500);
+    }
+    /* --------- Sets padding for all card elements --------- */
+    .card:nth-child(1) {
+        padding: var(--spacing-500) var(--spacing-400);
+    }
+    .card:nth-child(2) {
+        padding: var(--spacing-200);
+    }
+    .card:nth-child(3) {
+        padding: var(--spacing-200) var(--spacing-200) 0;
+    }
+    .card:nth-child(3n + 4) { /* selects the 4th & 7th card elements */
+        padding: var(--spacing-400);
+    }
+    .card:nth-child(5),
+    .card:nth-child(6),
+    .card:nth-child(8) {
+        padding: var(--spacing-300);
+    }
+    h1 {
+        font-size: 2.875rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 2.625rem;
+        /* letter-spacing: -0.115rem; */
+
+        span {
+            color: var(--yellow);
+        }
     }
     h2 {
         font-size: 1.625rem;
@@ -56,63 +107,108 @@ img {
         font-size: 2.875rem;
         font-weight: 500;
         line-height: 2.625rem;
-        letter-spacing: -0.115rem;
+        letter-spacing: -0.115rem
     }
     p {
-        line-height: 1.25rem;
+        font-size: var(--18px);
         font-weight: 400;
+        line-height: 1.25rem;
     }
 }
 
 
-.container .card:first-child {
+.container .card:nth-child(1) {
     background: var(--purple);
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2.5rem 2rem;
 
     h1, p {
         color: var(--white);
     }
 
-    h1 {
-        font-size: 2.875rem;
-        font-weight: 500;
-        text-align: center;
-        line-height: 2.625rem;
-        /* letter-spacing: -0.115rem; */
-
-        span {
-            color: var(--yellow);
-        }
-    }
     .img-wrapper {
         max-width: 12rem;
-        margin-top: 1.5rem;
     }
     p {
-        margin-top: 0.5rem;
+        margin-top: var(--spacing-100);
     }
 }
 
 .container .card:nth-child(2) {
     background: var(--white);
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
 
     .img-wrapper {
         max-width: 19.75rem;
-    }
-    h2 {
-        font-weight: 500;
-        margin-top: 1rem;
     }
 }
 
 .container .card:nth-child(3) {
     background: var(--yellow);
+
+    .img-wrapper {
+        max-width: 13rem;
+        max-height: 9.813rem;
+    }
+}
+
+.container .card:nth-child(4) {
+    background: var(--purple-Lt);
+    align-items: center;
+    justify-content: center;
+
+    .img-wrapper {
+        max-width: 22.313rem;
+    }
+    p {
+        text-align: center;
+        max-width: 22.438rem;
+    }
+}
+
+.container .card:nth-child(5) {
+    background: var(--purple);
+    align-items: center;
+    justify-content: center;
+
+    .img-wrapper {
+        max-width: 14.25rem;
+    }
+    h3 {
+        text-align: center;
+        color: var(--white);
+    }
+}
+
+.container .card:nth-child(6) {
+    background: var(--white);
+
+    .img-wrapper {
+        max-width: 11.188rem;
+    }
+    div p {
+        margin-top: 0.938rem;
+    }
+}
+
+.container .card:nth-child(7) {
+    background: var(--yellow-Lt);
+    align-items: flex-start;
+    justify-content: center;
+
+    h3 span {
+        color: var(--purple);
+    }
+    .img-wrapper {
+        max-width: 11.875rem;
+    }
+}
+
+.container :nth-child(8) {
+    background: var(--yellow);
+
+    .img-wrapper {
+        max-width: 13.75rem;
+        max-height: 13.875rem;
+    }
 }
