@@ -49,37 +49,120 @@ img {
         border-radius: 0.625rem;
     }
 
-    /* --------- Sets a gap for all card elements --------- */
-    .card:nth-child(1), /* selects 1st, 4th, 6th, 7th, & 8th child elements */
-    .card:nth-child(4),
-    .card:nth-child(n + 6) {
-        gap: var(--spacing-300);
-    }
-    .card:nth-child(2),
-    .card:nth-child(3) {
-        gap: var(--spacing-200);
-    }
-    .card:nth-child(5) {
-        gap: var(--spacing-500);
-    }
-    /* --------- Sets padding for all card elements --------- */
     .card:nth-child(1) {
+        background: var(--purple);
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-300);
         padding: var(--spacing-500) var(--spacing-400);
+
+        h1, p {
+            color: var(--white);
+        }
+    
+        .img-wrapper {
+            max-width: 12rem;
+        }
+        p {
+            margin-top: var(--spacing-100);
+        }
     }
+
     .card:nth-child(2) {
+        background: var(--white);
+        align-items: flex-start;
+        gap: var(--spacing-200);
         padding: var(--spacing-200);
+
+        .img-wrapper {
+            max-width: 19.75rem;
+        }
     }
+
     .card:nth-child(3) {
+        background: var(--yellow);
+        gap: var(--spacing-200);
         padding: var(--spacing-200) var(--spacing-200) 0;
+
+        .img-wrapper {
+            max-width: 13rem;
+            max-height: 9.813rem;
+        }
     }
-    .card:nth-child(3n + 4) { /* selects the 4th & 7th card elements */
+
+    .card:nth-child(4) {
+        background: var(--purple-Lt);
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-300);
         padding: var(--spacing-400);
+
+        .img-wrapper {
+            max-width: 22.313rem;
+        }
+        p {
+            text-align: center;
+            max-width: 22.438rem;
+        }
     }
-    .card:nth-child(5),
-    .card:nth-child(6),
-    .card:nth-child(8) {
+
+    .card:nth-child(5) {
+        background: var(--purple);
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-500);
         padding: var(--spacing-300);
+
+        .img-wrapper {
+            max-width: 14.25rem;
+        }
+        h3 {
+            text-align: center;
+            color: var(--white);
+            max-width: 16.063rem;
+        }
     }
+
+    .card:nth-child(6) {
+        background: var(--white);
+        gap: var(--spacing-300);
+        padding: var(--spacing-300);
+
+        .img-wrapper {
+            max-width: 11.188rem;
+        }
+        div p {
+            margin-top: 0.938rem;
+        }
+    }
+
+    .card:nth-child(7) {
+        background: var(--yellow-Lt);
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--spacing-300);
+        padding: var(--spacing-400);
+
+        h3 span {
+            color: var(--purple);
+        }
+        .img-wrapper {
+            max-width: 11.875rem;
+        }
+    }
+
+    .card:nth-child(8) {
+        background: var(--yellow);
+        gap: var(--spacing-300);
+        padding: var(--spacing-300);
+
+        .img-wrapper {
+            max-width: 13.75rem;
+            max-height: 13.875rem;
+        }
+    }
+
+    
     h1 {
         font-size: 2.875rem;
         font-weight: 500;
@@ -117,98 +200,100 @@ img {
 }
 
 
-.container .card:nth-child(1) {
-    background: var(--purple);
-    justify-content: center;
-    align-items: center;
 
-    h1, p {
-        color: var(--white);
-    }
 
-    .img-wrapper {
-        max-width: 12rem;
-    }
-    p {
-        margin-top: var(--spacing-100);
+
+
+/* ------------- Media Queries ------------- */
+
+/* 768px = 48rem */
+@media (width >= 48rem) {
+    .container {
+        padding: 3.25rem 2.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        " card1 card1 "
+        " card2 card3 "
+        " card4 card4 "
+        " card5 card5 "
+        " card6 card6 "
+        " card7 card8 "
+        ;
+
+        .card:nth-child(1) {
+            grid-area: card1;
+            height: 20.25rem;
+        }
+
+        .card:nth-child(2) {
+            grid-area: card2;
+            justify-content: space-between;
+            padding: var(--spacing-300);
+
+            h2 {
+                max-width: 13rem;
+            }
+        }
+
+        .card:nth-child(3) {
+            grid-area: card3;
+            padding: var(--spacing-300) var(--spacing-300) 0;
+
+            h2 {
+                max-width: 15.688rem;
+            }
+        }
+
+        .card:nth-child(4) {
+            grid-area: card4;
+        }
+
+        .card:nth-child(5) {
+            grid-area: card5;
+            flex-direction: row;
+
+            h3 {
+                text-align: start;
+            }
+        }
+
+        .card:nth-child(6) {
+            grid-area: card6;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card:nth-child(7) {
+            grid-area: card7;
+            padding: var(--spacing-300);
+        }
+
+        .card:nth-child(8) {
+            grid-area: card8;
+        }
+
+        h1 {
+            font-size: 3.375rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            line-height: 1.625rem;
+            letter-spacing: -0.105rem;
+        }
+        h3 {
+            font-size: 2.25rem;
+            line-height: 1.875rem;
+            letter-spacing: -0.135rem;
+        }
+        h4 {
+            font-size: 3.375rem;
+            line-height: 3rem;
+            letter-spacing: -0.135rem;
+        }
     }
 }
 
-.container .card:nth-child(2) {
-    background: var(--white);
-    align-items: flex-start;
+/* 1280px = 80rem */
+@media (width >= 1280) {
 
-    .img-wrapper {
-        max-width: 19.75rem;
-    }
-}
-
-.container .card:nth-child(3) {
-    background: var(--yellow);
-
-    .img-wrapper {
-        max-width: 13rem;
-        max-height: 9.813rem;
-    }
-}
-
-.container .card:nth-child(4) {
-    background: var(--purple-Lt);
-    align-items: center;
-    justify-content: center;
-
-    .img-wrapper {
-        max-width: 22.313rem;
-    }
-    p {
-        text-align: center;
-        max-width: 22.438rem;
-    }
-}
-
-.container .card:nth-child(5) {
-    background: var(--purple);
-    align-items: center;
-    justify-content: center;
-
-    .img-wrapper {
-        max-width: 14.25rem;
-    }
-    h3 {
-        text-align: center;
-        color: var(--white);
-    }
-}
-
-.container .card:nth-child(6) {
-    background: var(--white);
-
-    .img-wrapper {
-        max-width: 11.188rem;
-    }
-    div p {
-        margin-top: 0.938rem;
-    }
-}
-
-.container .card:nth-child(7) {
-    background: var(--yellow-Lt);
-    align-items: flex-start;
-    justify-content: center;
-
-    h3 span {
-        color: var(--purple);
-    }
-    .img-wrapper {
-        max-width: 11.875rem;
-    }
-}
-
-.container :nth-child(8) {
-    background: var(--yellow);
-
-    .img-wrapper {
-        max-width: 13.75rem;
-        max-height: 13.875rem;
-    }
 }
