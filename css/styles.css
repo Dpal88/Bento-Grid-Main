@@ -294,6 +294,87 @@ img {
 }
 
 /* 1280px = 80rem */
-@media (width >= 1280) {
+@media (width >= 80rem) {
+    body {
+        background: #F6F5F6;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .container {
+        max-height: 965px;
+        max-width: 1200px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 2fr 50px 1fr 1.5fr;
+        grid-template-areas:
+        " card7 card1 card1 card4 "
+        " card7 card2 card3 card4 "
+        " card8 card2 card3 card4 "
+        " card8 card6 card5 card5 "
+        ;
 
+        .card:nth-child(1) {
+            height: auto;
+        }
+
+        .card:nth-child(2) {
+            overflow: hidden;
+
+            .img-wrapper {
+                margin-inline-end: -7rem;
+            }
+            
+        }
+
+        .card:nth-child(3) {
+            overflow: hidden;
+        }
+
+        .card:nth-child(4) {
+            overflow: hidden;
+
+            .img-wrapper {
+                margin-inline-end: -10rem;
+                max-width: 357px;
+
+                img {
+                    max-width: 357px;
+                }
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+
+        .card:nth-child(6) {
+            flex-direction: column;
+        }
+
+        .card:nth-child(8) {
+            justify-content: space-between;
+        }   
+
+        h1 {
+            font-size: 3.875rem;
+            line-height: 3.625rem;
+            letter-spacing: -0.188rem;
+        }
+        h2 {
+            font-size: 2rem;
+            line-height: 1.75rem;
+            letter-spacing: -0.125rem;
+        }
+        h3 {
+            font-size: 2.5rem;
+            line-height: 2.25rem;
+            letter-spacing: -0.125rem;
+        }
+        h4 {
+            font-size: 3.875rem;
+            line-height: 3.625rem;
+            letter-spacing: -0.188rem;
+        }
+    }
+
+    
 }
